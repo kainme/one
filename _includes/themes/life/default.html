@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<!--
+ #                   ####
+ #           #      #                         #     #
+ #                  #                         ##   ##
+ #         ###     ####      #####            # # # #   #####   ### ##    #####    # ###   #    #
+ #           #      #       #     #           #  #  #  #     #  #  #  #  #     #   ##      #    #
+ #           #      #       #######           #     #  #######  #  #  #  #     #   #       #    #
+ #           #      #       #                 #     #  #        #  #  #  #     #   #       #    #
+ ######    #####    #        #####            #     #   #####   #     #   #####    #        #####
+                                                                                                #
+                                                                                            ####
+-->
+<html lang="zh-CN"/>
+<head>
+	<meta http-equiv="pragma" content="no-cache">
+	<meta http-equiv="expires" content="Tue, 01 Jan 2013 00:00:00 GMT">
+	<meta http-equiv="Cache-Control" content="no-cache,must-revalidate,no-transform">
+	<meta charset="utf-8" />
+	<meta name="author" content="{{ site.author.name }}" />
+	<meta name="generator" content="Jekyll" />
+	<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1" />
+	<meta name="keywords" content="{% if page.tags and page.tags != '' %}{{ page.tags }},{% else %}{{ site.keywords }}{% endif %}" />
+	<meta name="description" content="{% if page.title and page.title != '' %}{{ page.title }}{% else %}{{ site.description }}{% endif %}" />
+	<title>{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}{% if page.is_index %}-{{ site.description }}{% endif %}</title>
+	<link rel="stylesheet" href="{{ ASSET_PATH }}/css/kimochi.css" media="all"/>
+	<link rel="stylesheet" href="{{ ASSET_PATH }}/css/style.css" media="all"/>
+	<link rel="shortcut icon" href="/favicon.ico" />
+	<link href="http://feed.miantiao.me" type="application/rss+xml" rel="alternate" title="LifeMemory RSS Feed" />
+	<link href="{{ BASE_PATH }}{{ site.JB.atom_path }}" type="application/atom+xml" rel="alternate" title="LifeMemory ATOM Feed" />
+	<link rel="canonical" href="{% if page.is_index %}{{ site.url }}{% else %}{{ site.url }}{{ page.url }}{% endif %}" />
+	{% if page.date %}
+    <meta property='st:published_at' content='{{ page.date | date_to_xmlschema }}' />
+    {% endif %}
+	<script type="text/javascript" src="{{ ASSET_PATH }}/js/jquery.min.js"></script>
+</head>
+<body>
+	<div id="head" class="w-100p">
+		<div class="header">
+			<a href="{{ site.url }}" class="logo left"><img class="logoimg" src="data:image/png;base64,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" alt="{{ site.title }}"/></a>
+			<div class="site">
+				<a href="{{ site.url }}" class="name font-white font-36">{{ site.title }}</a>
+				<p class="desc font-white font-20">{{ site.description }}</p>
+			</div>
+			<div class="social-icons right">
+				<a href="http://www.twitter.com/ccbikai" title="Tui特"  target="_blank" rel="nofollow"><i class="icon-twitter"></i></a>
+				<a href="http://miantiao.me" title="订阅我的微信"  target="_blank" rel="nofollow"><i class="icon-weixin"></i></a>
+				<a href="http://weibo.com/ccbikai" title="新浪微博"  target="_blank" rel="nofollow"><i class="icon-weibo"></i></a>
+				<a href="http://t.qq.com/ccbikai" title="腾讯微博"  target="_blank" rel="nofollow"><i class="icon-tqq"></i></a>
+				<a href="http://instagram.com/iakibcc" title="Instagram"  target="_blank" rel="nofollow"><i class="icon-instagram"></i></a>
+				<a href="http://www.zhihu.com/people/ccbikai" title="知乎"  target="_blank" rel="nofollow"><i class="icon-zhihu"></i></a>
+				<a href="https://www.v2ex.com/member/ccbikai" title="V2EX"  target="_blank" rel="nofollow"><i class="icon-v2ex"></i></a>
+				<a href="http://www.github.com/ccbikai" title="github"  target="_blank" rel="nofollow"><i class="icon-github"></i></a>
+				<a href="http://feed.miantiao.me" title="订阅我的博客"  target="_blank" rel="nofollow"><i class="icon-rss"></i></a>
+			</div>
+		</div>
+	</div>
+	<div id="main" class="w-100p font-gray-dark">
+		<div id="menu" class="nav nav-large nav-orange">
+			<div class="menu cleared">
+			<a title="{{ site.title }} | {{ site.description }}" class="nav-item pjax" href="/"><i class="icon-home"></i>首页</a>
+				<div class="nav-has-menu">
+					<a title="归档 | {{ site.title }}" class="nav-item pjax" href="/archives.html"><i class="icon-archive"></i>归档</a>
+						<div class="nav-menu">
+							{% for node in site.categories %}
+							<a title="{{ node[0] }}" class="nav-menu-item" href="/archives.html#{{ node[0] }}"><i class="icon-cat"></i>{{ node[0] }}</a>
+							{% endfor %}
+						</div>
+				</div>
+			<a title="邻居 | {{ site.title }}" class="nav-item pjax" href="/links.html"><i class="icon-link"></i>邻居</a>
+			<a title="留言 | {{ site.title }}" class="nav-item pjax" href="/guestbook.html"><i class="icon-category"></i>留言</a>
+				<div class="search right h-1">
+					<form id="searchform">
+					<input type="text" id="st-search-input" value="" placeholder="敢不敢搜一下？" />
+					</form>
+				</div>
+			</div>
+		</div>
+		<div id="articles">
+		{{ content }}
+		</div>
+		{% if page.is_index %}
+				<a class="scroll-pause" href="#" title="暂停加载">暂停加载</a>
+				<a class="scroll-resume" href="#" title="继续加载">继续加载</a>
+			<div id="more" class="align-center mt-2">
+				<a href="/page{{ paginator.next_page }}/" class="loadmore button button-orange w-30p pjax" title="分页查看 | {{ site.title }}">查看更多</a>
+			</div>
+		{% endif %}
+	</div>
+	<div id="foot" class="w-100p font-white h-5 pt-2 bg-orange">
+		<div id="about" class="align-center">&copy; 2009-2014 {{ site.title }} ,Powered By Jekyll ,Design By <a href="https://plus.google.com/113613029248221235605?rel=author">cc bikai</a> .
+		<a id="rocket" href="#top" title="返回顶部"><i></i></a>
+		</div>
+		<div class="instagram"><div class="ins-loading"><div class="bar"><div class="qiu"></div><p>Loading</p></div></div></div>
+		<a id="ins" href="#"><i class="icon-instagram"></i></a>
+		{% if page.is_index %}
+		<div class="friends">
+			<div class="friends_info"><a id="friends" href="#" rel="nofollow"><span>我的小伙伴</span></a></div>
+			<div id="friends_list" class="friends_list">
+			<ul class="no-list">
+				<li><a href="http://www.inbiji.com/" title="好记性不如烂笔记" >in笔记</a></li>
+				<li><a href="http://www.jucelin.cn/" title="关注生活,关注网络,关注新的一天&#8230;" >Jucelin&#039;s Blog</a></li>
+				<li><a href="http://kagami.me/" title="Code is immaterial wealth" >橙的记事本</a></li>
+				<li><a href="http://zhw-island.com/" title="少年，你有多忧伤" >老赵茶馆</a></li>
+				<li><a href="http://www.bletter.cn/" title="如果不坚强，软弱给谁看。" >在路上</a></li>
+				<li><a href="http://oursgs.com/" title="趁阳光正好,趁微风不噪" >周小姐 W/Z</a></li>
+				<li><a href="http://thoseyears.org/" title="有态度的生活博客" >那些年的永远站</a></li>
+				<li><a href="http://www.zhbk.name/" title="淡定的人生不寂寞" >子浩博客</a></li>
+				<li><a href="http://www.54575.com/blog/" title="小琪不小气" >小琪不小气</a></li>
+				<li><a href="http://ijustin.pw/" title="即使行至命运的终点，剑刃相向之时，回望云峰，此生无悔，此生无愧！" >Justin's House</a></li>
+				<li><a href="http://yooooo.us/" title="论野生技术&二次元" >yooooo.us</a></li>
+				<li><a href="http://www.arefly.com/" title="暢想資源 | 搜索樂趣" >暢想資源</a></li>
+				<li><a href="http://www.leewe.tk/" title="leewe" >leewe</a></li>
+				<li><a href="http://www.yuxiaoxi.com/" title="麦田里长着一根葱" >麦田一根葱</a></li>
+				<li><a href="http://klant.cn/" title="Klant&#039;s Blog" >Klant&#039;s Blog</a></li>
+			</ul>
+			</div>
+			<a href="#" id="gc_close" rel="nofollow">X</a>
+		</div>
+		{% endif %}
+	</div>
+<link rel="stylesheet" href="{{ ASSET_PATH }}/fancybox/jquery.fancybox.css" type="text/css" media="all" />
+<script type="text/javascript" src="{{ ASSET_PATH }}/js/common.js"></script>
+<script src="http://static.duoshuo.com/embed.js"></script>
+<script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F2ca9289df034528d5f2efef062407ea3' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript" src="http://tajs.qq.com/stats?sId=28559201" charset="UTF-8"></script>
+</body>
+</html>
